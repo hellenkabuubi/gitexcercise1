@@ -1,7 +1,7 @@
 ---
 - name: setup
   hosts: all
-  become: true
+  sudo: true
   tasks:
   - name: Add ansible user
     user:
@@ -12,8 +12,8 @@
     apt:
       name: ntp
       state: present
-   - name : Ensure that NTP service is started
+  - name: Ensure that NTP service is started
     service:
-     name: ntp
-     state: started
+      name: ntp
+      state: started
  
